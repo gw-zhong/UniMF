@@ -4,21 +4,23 @@
 
 ## Usage
 ### Clone the repository
-    git clone https://gitee.com/zhongguowei-zjut/unimf.git
+    git clone https://github.com/gw-zhong/UniMF.git
 ### Download the datasets and BERT models
 + [CMU-MOSI & CMU-MOSEI (**Glove**) [align & unaligned]](http://immortal.multicomp.cs.cmu.edu/raw_datasets/processed_data/) (which are not available now)
 
 + [CMU-MOSI & CMU-MOSEI (**BERT**) [align & unaligned]](https://github.com/thuiar/MMSA)
 
-+ [MELD (**Sentiment**/**Emotion**) [align]](https://github.com/deepsuperviser/CTFN) (only Glove)
++ [MELD (**Sentiment**/**Emotion**) [align]](https://drive.google.com/drive/folders/10j3bWgAwD6i4obYoOWlxDYQQuX7DPPwa?usp=sharing) (only Glove)
 
 + [UR-FUNNY (**V1** & **V2**) [align]](https://github.com/ROC-HCI/UR-FUNNY) (only Glove)
 
+Alternatively, you can download these datasets from:
+- [BaiduYun Disk](https://pan.baidu.com/s/16UcDXgwmq9kxHf6ziJcChw) ```code: zpqk```
+
 For convenience, we also provide the BERT pre-training model that we fine-tuned with:
 
-[bert_cn]()
+- [pretrained_berts](https://pan.baidu.com/s/12zhRpTEx5589Bmo0OAF5cg) ```code: e7mw```
 
-[bert_en]()
 ### Preparation
 Create (empty) folders for data, results, and pre-trained models:
  ```python
@@ -44,7 +46,7 @@ bash scripts/meld.sh [input_mdalities] [experiment_id] [subdataset_name]
 ```bash
 bash scripts/urfunny.sh [input_mdalities] [experiment_id]
 ```
-### Run the code
+Or, you can run the code as normal:
  ```python
 python main.py --[FLAGS]
  ```
