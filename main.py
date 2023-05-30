@@ -23,7 +23,7 @@ parser.add_argument('--model', type=str, default='UniMF',
 # Tasks
 parser.add_argument('--aligned', type=bool, default=True,
                     help='consider aligned experiment or not (default: True)')
-parser.add_argument('--dataset', type=str, default='mosi', choices=['mosi', 'mosei', 'urfunny', 'mosi-bert', 'mosei-bert', 'meld_senti', 'meld_emo'],
+parser.add_argument('--dataset', type=str, default='mosi', choices=['mosi', 'mosei_senti', 'urfunny', 'mosi-bert', 'mosei-bert', 'meld_senti', 'meld_emo'],
                     help='dataset to use (default: mosi)')
 parser.add_argument('--data_path', type=str, default='/root/autodl-tmp',
                     help='path for storing the dataset')
