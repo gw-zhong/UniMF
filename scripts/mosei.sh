@@ -3,7 +3,7 @@ modality=$1
 run_idx=$2
 n_trial=$3
 
-cmd="python main.py --dataset=mosei --run_id=$run_idx --trials=$n_trial
+cmd="python main.py --dataset=mosei_senti --run_id=$run_idx --trials=$n_trial
 --batch_size=16 --clip=1.0 --num_epochs=20
 --distribute --modalities=$modality"
 echo "\n-------------------------------------------------------------------------------------"
