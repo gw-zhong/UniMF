@@ -24,7 +24,7 @@ For convenience, we also provide the BERT pre-training model that we fine-tuned 
 ### Preparation
 Create (empty) folders for data, results, and pre-trained models:
  ```python
-cd unimf
+cd UniMF
  mkdir data results pre_trained_models
 ```
 and put the downloaded data in 'data/'.
@@ -32,19 +32,19 @@ and put the downloaded data in 'data/'.
 To make it easier to run the code, we have provided scripts for each dataset:
 #### MOSI
 ```bash
-bash scripts/mosi.sh [input_mdalities] [experiment_id]
+bash scripts/mosi.sh [input_mdalities] [experiment_id] [number_of_trials]
 ```
 #### MOSEI
 ```bash
-bash scripts/mosei.sh [input_mdalities] [experiment_id]
+bash scripts/mosei.sh [input_mdalities] [experiment_id] [number_of_trials]
 ```
 #### MELD
 ```bash
-bash scripts/meld.sh [input_mdalities] [experiment_id] [subdataset_name]
+bash scripts/meld.sh [input_mdalities] [experiment_id] [subdataset_name] [number_of_trials]
 ```
 #### UR-FUNNY
 ```bash
-bash scripts/urfunny.sh [input_mdalities] [experiment_id]
+bash scripts/urfunny.sh [input_mdalities] [experiment_id] [number_of_trials]
 ```
 Or, you can run the code as normal:
  ```python

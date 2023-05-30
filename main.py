@@ -23,12 +23,14 @@ parser.add_argument('--model', type=str, default='UniMF',
 # Tasks
 parser.add_argument('--aligned', type=bool, default=True,
                     help='consider aligned experiment or not (default: True)')
-parser.add_argument('--dataset', type=str, default='mosi',
+parser.add_argument('--dataset', type=str, default='mosi', choices=['mosi', 'mosei', 'urfunny', 'mosi-bert', 'mosei-bert', 'meld_senti', 'meld_emo'],
                     help='dataset to use (default: mosi)')
-parser.add_argument('--data_path', type=str, default='data',
+parser.add_argument('--data_path', type=str, default='/root/autodl-tmp',
                     help='path for storing the dataset')
 parser.add_argument('--run_id', type=int, default=1,
-                    help='experiment id')
+                    help='experiment id (default: 1)')
+parser.add_argument('--trials', type=int, default=10,
+                    help='number of trials (default: 10)')
 
 # Dropouts
 parser.add_argument('--relu_dropout', type=float, default=0.1,
@@ -69,9 +71,9 @@ parser.add_argument('--use_bert', action='store_true', help='whether to use bert
 parser.add_argument('--language', type=str, default='en',
                     help='bert language (default: en)')
 
-# Input modality settings (LAV/LA/LV/AV/L/A/V)
-parser.add_argument('--modalities', type=str, default='LAV',
-                    help='input modalities (LAV/LA/LV/AV/L/A/V)')
+# Input modality settings
+parser.add_argument('--modalities', type=str, default='LAV', choices=['LAV', 'LA', 'LV', 'AV', 'L', 'A', 'V'],
+                    help='input modalities (default: LAV)')
 
 args = parser.parse_args()
 
@@ -122,6 +124,8 @@ if torch.cuda.is_available():
 print("Start loading the data....")
 
 if dataset == 'mosi' or dataset == 'mosei_senti' or dataset == 'iemocap':
+    if args.use_bert:
+        raise ValueError('If you want to run bert version, please use mosi-bert or mosei-bert')
     train_data = get_data(args, dataset, 'train')
     valid_data = get_data(args, dataset, 'valid')
     test_data = get_data(args, dataset, 'test')
@@ -161,7 +165,7 @@ valid_loader = DataLoader(valid_data, batch_size=args.batch_size, shuffle=True, 
 test_loader = DataLoader(test_data, batch_size=args.batch_size, shuffle=True, generator=torch.Generator(device='cuda'))
 
 print('Finish loading the data....')
-print(f'### Dataset - {dataset}')
+print(f'### Dataset - {str.upper(dataset)}')
 if not args.aligned:
     print("### Note: You are running in unaligned mode.")
 
@@ -258,7 +262,7 @@ if __name__ == '__main__':
 
         return acc
 
-    n_trials = 10
+    n_trials = hyp_params.trials
     if dataset == 'iemocap':
         study = optuna.create_study(
             directions=['maximize', 'maximize', 'maximize', 'maximize'], sampler=sampler,
