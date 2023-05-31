@@ -19,7 +19,7 @@ Alternatively, you can download these datasets from:
 
 For convenience, we also provide the BERT pre-training model that we fine-tuned with:
 
-- [pretrained_berts](https://pan.baidu.com/s/12zhRpTEx5589Bmo0OAF5cg) ```code: e7mw```
+- [BaiduYun Disk](https://pan.baidu.com/s/12zhRpTEx5589Bmo0OAF5cg) ```code: e7mw```
 
 ### Preparation
 Create (empty) folders for data, results, and pre-trained models:
@@ -30,6 +30,12 @@ cd UniMF
 and put the downloaded data in 'data/'.
 ### Quick Start
 To make it easier to run the code, we have provided scripts for each dataset:
+- input_modalities: The input modality, which can be any of ```LAV```, ```LA```, ```LV```, ```AV```, ```L```, ```A```, ```V```.
+- experiment_id: The id of the experiment, which can be set to an arbitrary integer number.
+- number_of_trials: Number of trials for hyperparameter optimization.
+- subdataset_name: Only MELD exists, set to ```meld_senti``` or ```meld_emo``` for MELD (Sentiment) or MELD (Emotion) respectively.
+
+Note: If you want to run bert mode, add ```--use_bert``` and change the dataset name to ```mosi-bert``` or ```mosei-bert```.
 #### MOSI
 ```bash
 bash scripts/mosi.sh [input_mdalities] [experiment_id] [number_of_trials]
