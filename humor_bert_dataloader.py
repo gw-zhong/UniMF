@@ -82,7 +82,6 @@ class HumorBertDataset(Dataset):
 
     # right padding with zero  vector upto maximum number of words in a sentence * glove embedding dimension
     def paded_word_idx(self, seq, max_sen_len=20, left_pad=1):
-        seq = ' '.join(seq)
         tokenized = self.tokenizer.encode_plus(
             seq, max_length=max_sen_len, add_special_tokens=True, padding='max_length', truncation=True)
         input_ids = np.array(tokenized['input_ids']).reshape(1, -1)
