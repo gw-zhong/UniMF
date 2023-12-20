@@ -58,12 +58,14 @@ python main.py --[FLAGS]
  ```
 ## Citation
 Please cite our paper if you find that useful for your research:
- ```
- @article{huan2023unimf,
-  title={UniMF: A Unified Multimodal Framework for Multimodal Sentiment Analysis in Missing Modalities and Unaligned Multimodal Sequences},
-  author={Huan, Ruohong and Zhong, Guowei and Chen, Peng and Liang, Ronghua},
-  journal={IEEE Transactions on Multimedia},
-  year={2023},
-  publisher={IEEE}
+ ```bibtex
+@article{huan2023unimf,
+   title={UniMF: A Unified Multimodal Framework for Multimodal Sentiment Analysis in Missing Modalities and Unaligned Multimodal Sequences},
+   author={Huan, Ruohong and Zhong, Guowei and Chen, Peng and Liang, Ronghua},
+   journal={IEEE Transactions on Multimedia},
+   year={2023},
+   publisher={IEEE}
 }
  ```
+## Contact
+If you have any question, feel free to contact me through [guoweizhong@zjut.edu.cn](guoweizhong@zjut.edu.cn).
