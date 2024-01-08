@@ -22,7 +22,11 @@ For convenience, we also provide the BERT pre-training model that we fine-tuned 
 - [BaiduYun Disk](https://pan.baidu.com/s/12zhRpTEx5589Bmo0OAF5cg) ```code: e7mw```
 
 ### Preparation
-Create (empty) folders for data, results, and pre-trained models:
+First, install the required packages for your virtual environment:
+ ```
+pip install -r requirements.txt
+ ```
+Then, create (empty) folders for data, results, and pre-trained models:
  ```python
 cd UniMF
  mkdir data results pre_trained_models
