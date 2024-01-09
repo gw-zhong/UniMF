@@ -25,7 +25,7 @@ parser.add_argument('--aligned', type=bool, default=True,
                     help='consider aligned experiment or not (default: True)')
 parser.add_argument('--dataset', type=str, default='mosi', choices=['mosi', 'mosei_senti', 'urfunny', 'mosi-bert', 'mosei-bert', 'meld_senti', 'meld_emo'],
                     help='dataset to use (default: mosi)')
-parser.add_argument('--data_path', type=str, default='/root/autodl-tmp',
+parser.add_argument('--data_path', type=str, default='data',
                     help='path for storing the dataset')
 parser.add_argument('--run_id', type=int, default=1,
                     help='experiment id (default: 1)')
